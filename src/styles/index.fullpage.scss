@@ -1,0 +1,109 @@
+@import "./mixins.scss";
+@import "./reset.scss";
+
+img {
+  display: block;
+}
+
+.top-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: rem(48);
+  background: #393939 url(../images/logo.png) center no-repeat;
+  background-size: rem(26);
+  z-index: 100;
+}
+
+.section {
+  .fp-tableCell {
+    padding-top: rem(48);
+    @include flex(column, center, center);
+    .fp-scrollable {
+      line-height: 1;
+    }
+  }
+}
+
+.section-top {
+  background: #0f4c81;
+
+  &_image {
+    display: block;
+    width: rem(300);
+    height: rem(310);
+    background: url(../images/1-1.png) center top no-repeat,
+      url(../images/1-2.png) center rem(42) no-repeat,
+      url(../images/1-3.png) center bottom no-repeat;
+    background-size: contain, contain, contain;
+  }
+  &_title {
+    margin-top: vh(62);
+    @include fontLight();
+    font-size: rem(26);
+    font-weight: 300;
+    letter-spacing: rem(1);
+    color: #ffffff;
+  }
+  &_desc {
+    margin-top: vh(117);
+    @include fontRegular();
+    font-size: rem(11);
+    font-weight: 400;
+    color: #ffffff;
+  }
+}
+
+.section-bottom {
+  overflow: auto;
+  .fp-tableCell {
+    display: block;
+    .fp-scrollable {
+    }
+    .fp-scroller {
+      @include flex(column, center, center);
+      padding-bottom: rem(60);
+    }
+  }
+
+  &_title {
+    padding-top: vh(50);
+    padding-bottom: vh(32);
+    @include fontHBold();
+    font-size: rem(18);
+    line-height: 1;
+    font-weight: 800;
+  }
+  &_image {
+    width: rem(342);
+  }
+
+  .brand-group-list {
+    &_item {
+      margin-top: vh(13);
+
+      .brand-group-title {
+        @include fontRegular();
+        font-size: rem(12);
+        line-height: rem(18);
+        font-weight: rem(400);
+        color: #666666;
+      }
+
+      .brand-group-image {
+        margin-top: vh(8);
+        width: rem(342);
+      }
+    }
+  }
+
+  &_web-info {
+    margin-top: vh(34);
+    @include fontRegular();
+    font-size: rem(10);
+    line-height: rem(18);
+    color: #999999;
+    text-align: center;
+  }
+}

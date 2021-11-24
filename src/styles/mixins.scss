@@ -1,0 +1,54 @@
+@use "sass:math";
+
+$px-375: 37.5;
+$base-vh: 676;
+
+$color-black: #666666;
+
+@function rem($n) {
+  @return math.div($n, $px-375) * 1rem;
+}
+
+@function vh($n) {
+  @return (math.div($n, $base-vh) * 100) * 1vh;
+}
+
+@mixin fontRegular() {
+  font-family: "webfont_regular";
+}
+
+@mixin fontBold() {
+  font-family: "webfont_bold";
+}
+
+@mixin fontHBold() {
+  font-family: "webfont_hbold";
+}
+
+@mixin fontLight() {
+  font-family: "webfont_light";
+}
+
+@mixin flex($flow: row nowrap, $jus: space-between, $ali: center) {
+  display: flex;
+  flex-flow: $flow;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+@mixin font($size: 14, $lh: 24) {
+  line-height: rem($lh);
+  font-size: rem($size);
+}
+
+@mixin screen-mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin screen-pc {
+  @media screen and (min-width: 769px) {
+    @content;
+  }
+}
